@@ -1,4 +1,19 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" * Vim addon manager - https://github.com/MarcWeber/vim-addon-manager
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+fun SetupVAM()
+    let c = get(g:, 'vim_addon_manager', {})
+    let g:vim_addon_manager = c
+    let c.plugin_root_dir = expand('$HOME') . '/.vim/vim-addons'
+    let &rtp.=(empty(&rtp)?'':',').c.plugin_root_dir.'/vim-addon-manager'
+
+    call vam#ActivateAddons(['nerdcommenter'], {'auto_install' : 0})
+
+endfun
+
+call SetupVAM()
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " * General settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Security settings for VIM
@@ -36,6 +51,9 @@ set mat=2
 " don't wrap lines
 set nowrap
 
+" don't auto indent when pasting
+set paste
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " * Colors and Fonts
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -47,6 +65,9 @@ set background=dark
 
 " More colors
 set t_Co=256
+
+" Set utf8 as standard encoding
+set encoding=utf8
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " * Text, tabs, indexing and indent related
@@ -77,7 +98,7 @@ set tw=80
 set ai
 
 " Instead of whitespaces, symboles are inserted
-"set list listchars=tab:..,trail:.,nbsp:. TODO fix me!!
+set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " * Files, backups and undo
@@ -106,9 +127,19 @@ set showmode
 set laststatus=2
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" * Hotkeys
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" paste
+map <F10> :set paste!<Bar>set paste?<CR>
+
+" line number
+map <F11> :set number!<Bar>set number?<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " * System configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Don't write backup file if vim is being called by 'crontab -e'
 au BufWrite /private/tmp/crontab.* set nowritebackup
+
 " Don't write backup file if vim is being called by 'chpass'
 au BufWrite /private/etc/pw.* set nowritebackup

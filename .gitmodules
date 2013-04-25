@@ -1,0 +1,6 @@
+[submodule "vim-addons/vim-addon-manager"]
+	path = vim-addons/vim-addon-manager
+	url = https://github.com/MarcWeber/vim-addon-manager.git
+[submodule "vim-addons/nerdcommenter"]
+	path = vim-addons/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
