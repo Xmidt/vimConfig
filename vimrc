@@ -7,7 +7,7 @@ fun SetupVAM()
     let c.plugin_root_dir = expand('$HOME') . '/.vim/vim-addons'
     let &rtp.=(empty(&rtp)?'':',').c.plugin_root_dir.'/vim-addon-manager'
 
-    call vam#ActivateAddons(['nerdcommenter'], {'auto_install' : 0})
+    call vam#ActivateAddons(['nerdcommenter','nerdtree'], {'auto_install' : 0})
 
 endfun
 
@@ -129,6 +129,9 @@ set laststatus=2
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " * Hotkeys
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" nerdtree
+map <F2> :NERDTreeToggle<CR>
+
 " paste
 map <F10> :set paste!<Bar>set paste?<CR>
 
