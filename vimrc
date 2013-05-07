@@ -54,6 +54,9 @@ set nowrap
 " don't auto indent when pasting
 set paste
 
+" Status bar information
+set ruler
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " * Colors and Fonts
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
