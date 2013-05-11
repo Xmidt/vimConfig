@@ -132,6 +132,9 @@ set laststatus=2
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " * Hotkeys
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Run things within vim with 'return'
+map <RETURN> :make<CR><CR>
+
 " nerdtree
 map <F2> :NERDTreeToggle<CR>
 
@@ -140,6 +143,7 @@ map <F10> :set paste!<Bar>set paste?<CR>
 
 " line number
 map <F11> :set number!<Bar>set number?<CR>
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " * System configuration
