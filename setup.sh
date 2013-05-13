@@ -13,5 +13,8 @@ done
 git submodule init
 git submodule update
 
+# Create symbolic link to vims package manager
+ln -s ~/.vim/bundle/vim-pathogen/autoload ~/.vim/
+
 # Create symbolic link to vim
 ln -s ~/.vim/vimrc ~/.vimrc
