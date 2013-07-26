@@ -128,6 +128,8 @@ map <F10> :set paste!<Bar>set paste?<CR>
 " line number
 map <F11> :set number!<Bar>set number?<CR>
 
+" convert all tabs to whitespace and remove any trailing whitespaces
+map <F12> :%retab!<CR>:%s/\s\+$//<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " * System configuration
