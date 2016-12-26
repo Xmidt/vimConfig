@@ -81,12 +81,6 @@ set number
 set lbr
 set tw=80
 
-" Auto indenting
-set ai
-
-" Instead of whitespaces, symboles are inserted
-set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " * Files, backups and undo
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -119,18 +113,6 @@ set laststatus=2
 " Run things within vim with 'return'
 map <RETURN> :make<CR><CR>
 
-" nerdtree
-map <F2> :NERDTreeToggle<CR>
-
-" paste, when using ultisnips make sure this is turned off!
-map <F10> :set paste!<Bar>set paste?<CR>
-
-" line number
-map <F11> :set number!<Bar>set number?<CR>
-
-" convert all tabs to whitespace and remove any trailing whitespaces
-map <F12> :%retab!<CR>:%s/\s\+$//<CR>
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " * System configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -139,3 +121,8 @@ au BufWrite /private/tmp/crontab.* set nowritebackup
 
 " Don't write backup file if vim is being called by 'chpass'
 au BufWrite /private/etc/pw.* set nowritebackup
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" * Git commit messages
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd Filetype gitcommit setlocal spell textwidth=72
