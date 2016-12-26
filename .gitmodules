@@ -19,3 +19,6 @@
 [submodule "bundle/vim-pathogen"]
 	path = bundle/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
+[submodule "/home/rtorrent/.vim/bundle/seti.vim"]
+	path = /home/rtorrent/.vim/bundle/seti.vim
+	url = https://github.com/trusktr/seti.vim
